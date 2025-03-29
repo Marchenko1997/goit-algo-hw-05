@@ -2,18 +2,12 @@ from assistant_bot.utils import input_error
 
 @input_error
 def add_contact(arg, contacts):
-    if len(arg) != 2:
-        return "Enter your name and phone number."
-    
     name, phone = arg
     contacts[name] = phone
     return f"Contact {name} added."
 
 @input_error
 def change_contact(arg, contacts):
-    if len(arg) != 2:
-        return "Enter your name and phone number."
-    
     name, phone = arg
     if name in contacts:
         contacts[name] = phone
@@ -22,9 +16,6 @@ def change_contact(arg, contacts):
 
 @input_error
 def show_phone(arg, contacts):
-    if len(arg) != 1:
-        return "Enter the contact name."
-    
     name = arg[0]
     phone = contacts.get(name)
     if phone:

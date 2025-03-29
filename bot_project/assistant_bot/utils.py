@@ -1,4 +1,7 @@
 def parse_input(user_input):
+    if not user_input:
+        print("Input cannot be empty. Please enter a command.")
+        return "", []
     cmd, *args = user_input.split()
     return cmd.lower(), args
 
